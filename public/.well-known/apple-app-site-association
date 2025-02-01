@@ -3,9 +3,11 @@
     "apps": [],
     "details": [
       {
-        "appID": "TEAMID.com.example.go_find_taxi",
-        "paths": [ "*" ]
+        "appID": "com.mrnpro.goFindTaxi",
+        "paths": [
+          "*"
+        ]
       }
     ]
   }
-} 
+}

@@ -3,9 +3,18 @@
     "apps": [],
     "details": [
       {
-        "appID": "com.mrnpro.goFindTaxi",
-        "paths": [
-          "*"
+        "appIDs": [
+          "com.mrnpro.goFindTaxi"
+        ],
+        "components": [
+          {
+            "/": "/share-my-location*",
+            "comment": "Matches any URL with a path that starts with /share-my-location"
+          },
+          {
+            "/": "/ride/*",
+            "comment": "Matches any URL with a path that starts with /ride/"
+          }
         ]
       }
     ]

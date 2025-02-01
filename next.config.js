@@ -9,19 +9,9 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/share-my-location',
+        source: '/share-my-location/:lat/:lng',
         destination: '/?type=location&lat=:lat&lng=:lng',
         permanent: true,
-        has: [
-          {
-            type: 'query',
-            key: 'lat',
-          },
-          {
-            type: 'query',
-            key: 'lng',
-          },
-        ],
       },
     ]
   },

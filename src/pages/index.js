@@ -9,14 +9,17 @@ export default function Home() {
       const type = params.get('type');
 
       // Handle different types of deep links
+      // URLs will be in the format:
+      // Rides: /ride/{id}
+      // Location: /share-my-location/{lat}/{lng}
       if (type === 'ride') {
         const rideId = params.get('id');
-        const appUrl = `gofindtaxi://ride?id=${rideId}`;
+        const appUrl = `gofindtaxi://ride/${rideId}`;
         window.location.href = appUrl;
       } else if (type === 'location') {
         const lat = params.get('lat');
         const lng = params.get('lng');
-        const appUrl = `gofindtaxi://share-location?lat=${lat}&lng=${lng}`;
+        const appUrl = `gofindtaxi://share-my-location/${lat}/${lng}`;
         window.location.href = appUrl;
       }
     };

@@ -3,15 +3,20 @@ import Head from 'next/head';
 
 export default function Home() {
   useEffect(() => {
-    // Handle deep linking
     const handleDeepLink = () => {
       const { pathname, search } = window.location;
       const params = new URLSearchParams(search);
+      const type = params.get('type');
 
-      // Example deep link handler
-      if (pathname.startsWith('/ride')) {
+      // Handle different types of deep links
+      if (type === 'ride') {
         const rideId = params.get('id');
         const appUrl = `gofindtaxi://ride?id=${rideId}`;
+        window.location.href = appUrl;
+      } else if (type === 'location') {
+        const lat = params.get('lat');
+        const lng = params.get('lng');
+        const appUrl = `gofindtaxi://share-location?lat=${lat}&lng=${lng}`;
         window.location.href = appUrl;
       }
     };

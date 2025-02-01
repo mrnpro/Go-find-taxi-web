@@ -8,6 +8,21 @@ const nextConfig = {
         destination: '/?type=ride&id=:id',
         permanent: true,
       },
+      {
+        source: '/share-my-location',
+        destination: '/?type=location&lat=:lat&lng=:lng',
+        permanent: true,
+        has: [
+          {
+            type: 'query',
+            key: 'lat',
+          },
+          {
+            type: 'query',
+            key: 'lng',
+          },
+        ],
+      },
     ]
   },
   // Ensure .well-known files are served correctly

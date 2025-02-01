@@ -2,30 +2,29 @@ import { useEffect } from 'react';
 import Head from 'next/head';
 
 export default function Home() {
-  useEffect(() => {
-    const handleDeepLink = () => {
-      const { pathname, search } = window.location;
-      const params = new URLSearchParams(search);
-      const type = params.get('type');
+  // useEffect(() => {
+  //   const handleDeepLink = () => {
+  //     const { pathname, search } = window.location;
+  //     const params = new URLSearchParams(search);
+  //     //const type = params.get('type');
+  //     const appUrl = `share-my-location/${lat}/${lng}`;
+  //     window.location.href = appUrl;
+  //     // Handle different types of deep links
+  //     // URLs will be in the format:
+  //     // Rides: /ride/{id}
+  //     // Location: /share-my-location/{lat}/{lng}
+  //     // if (type === 'ride') {
+  //     //   const rideId = params.get('id');
+  //     //   const appUrl = `gofindtaxi://ride/${rideId}`;
+  //     //   window.location.href = appUrl;
+  //     // } else if (type === 'location') {
+  //     //   const lat = params.get('lat');
+  //     //   const lng = params.get('lng');
 
-      // Handle different types of deep links
-      // URLs will be in the format:
-      // Rides: /ride/{id}
-      // Location: /share-my-location/{lat}/{lng}
-      if (type === 'ride') {
-        const rideId = params.get('id');
-        const appUrl = `gofindtaxi://ride/${rideId}`;
-        window.location.href = appUrl;
-      } else if (type === 'location') {
-        const lat = params.get('lat');
-        const lng = params.get('lng');
-        const appUrl = `share-my-location/${lat}/${lng}`;
-        window.location.href = appUrl;
-      }
-    };
+  //     // }
+  //   };
 
-    handleDeepLink();
-  }, []);
+  // }, []);
 
   return (
     <div className="container">

@@ -19,7 +19,7 @@ export default function Home() {
       } else if (type === 'location') {
         const lat = params.get('lat');
         const lng = params.get('lng');
-        const appUrl = `gofindtaxi://share-my-location/${lat}/${lng}`;
+        const appUrl = `share-my-location/${lat}/${lng}`;
         window.location.href = appUrl;
       }
     };

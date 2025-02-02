@@ -10,7 +10,7 @@ const nextConfig = {
       },
       {
         source: '/share-my-location/:lat/:lng',
-        destination: '/?type=location&lat=:lat&lng=:lng',
+        destination: '/share-my-location/:lat/:lng',
         permanent: true,
       },
     ]
